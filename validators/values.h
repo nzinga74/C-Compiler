@@ -4,8 +4,11 @@
 #include "../tokens/token.h"
 #include "../file_reader.h"
 #include "../tokens/token.h"
+#include "../utils.h"
 #include <algorithm>
 #include <unordered_map>
+
+using namespace std;
 
 class Values
 {
@@ -45,10 +48,22 @@ public:
 
             while ((ch = reader->readNextCaracter()) != '"')
                 ;
-            //     printf("%c", ch);
-            // ;
-            // reader->goBack();
+
             return new Token(TOKEN_VALUE_STRING, reader->getLexema(), reader->getLine());
+        }
+        else if (ch == '<')
+        {
+            if ((ch = reader->readNextCaracter()) && isalpha(ch))
+            {
+                while ((ch = reader->readNextCaracter()) && (Utils::isValidHeaderCaracter(ch)))
+                    ;
+                string lexema = reader->getLexema();
+
+                if (Utils::isHeader(lexema))
+                {
+                    return new Token(TOKEN_HEADER, lexema, reader->getLine());
+                }
+            }
         }
         return NULL;
     }

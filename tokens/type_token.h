@@ -124,6 +124,7 @@ enum TypeToken
     TOKEN_MACRO_WARNING,
     TOKEN_MACRO_LINE,
     TOKEN_MACRO_ONCE,
+    TOKEN_HEADER,
 
 };
 

@@ -7,6 +7,8 @@
 #include "./tokens/token.h"
 #include <algorithm>
 #include <cctype>
+#include <regex>
+#include <string>
 using namespace std;
 
 class Utils
@@ -23,6 +25,24 @@ public:
         if (ch == ' ' || ch == '\t' || ch == '\r' || ch == '\n' || isspace(ch))
             return true;
         return false;
+    }
+    static bool isHeader(string str)
+    {
+        regex regex("^<([a-zA-Z]+[0-9]*)\\.h>$");
+        return regex_match(str, regex);
+    }
+    static bool isAlnumAndPoint(char ch)
+    {
+        if (ch == '.' || isalnum(ch))
+            return true;
+        return false;
+    }
+    static bool isValidHeaderCaracter(char ch)
+    {
+        if ((ch == '\n' || ch == '>' || (!isAlnumAndPoint(ch))))
+            return false;
+
+        return true;
     }
     static void imprimirToken(TypeToken token)
     {
@@ -113,6 +133,7 @@ public:
             {TOKEN_VALUE_FLOAT, "TOKEN_VALUE_FLOAT"},
             {TOKEN_VALUE_STRING, "TOKEN_VALUE_STRING"},
             {TOKEN_MACRO_INCLUDE, "TOKEN_MACRO_INCLUDE"},
+            {TOKEN_HEADER, "TOKEN_HEADER"},
         };
         int count = tokens.count(token);
         if (count > 0)
