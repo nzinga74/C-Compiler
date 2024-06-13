@@ -1,0 +1,7 @@
+void countdown(int start) {
+    int current = start;
+    while (current > 0) {
+        current--;
+    }
+    
+}

@@ -1,9 +1,9 @@
 #ifndef ARITHMETRIC_OPERATOR_H
 #define ARITHMETRIC_OPERATOR_H
 #include <iostream>
-#include "../tokens/type_token.h"
+#include "../../tokens/type_token.h"
 #include "../file_reader.h"
-#include "../tokens/token.h"
+#include "../../tokens/token.h"
 #include <algorithm>
 
 class ArithmetricOperator
@@ -65,6 +65,16 @@ public:
             }
             reader->goBack();
             return new Token(TOKEN_OPR_MULT, "*", reader->getLine());
+        }
+        else if (ch == '/')
+        {
+            ch = reader->readNextCaracter();
+            if (ch == '=')
+            {
+                return new Token(TOKEN_OPR_DIV_EGUAL, "/=", reader->getLine());
+            }
+            reader->goBack();
+            return new Token(TOKEN_OPR_DIV, "/", reader->getLine());
         }
         return NULL;
     }

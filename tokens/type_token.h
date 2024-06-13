@@ -92,6 +92,7 @@ enum TypeToken
     TOKEN_VOLALILE,
     TOKEN_STRUCT,
     TOKEN_RETURN,
+    TOKEN_PRINTF,
 
     TOKEN_INT,
     TOKEN_FLOAT,

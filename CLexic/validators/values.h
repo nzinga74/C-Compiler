@@ -1,9 +1,9 @@
 #ifndef VALUES_H
 #define VALUES_H
 #include <iostream>
-#include "../tokens/token.h"
+#include "../../tokens/token.h"
 #include "../file_reader.h"
-#include "../tokens/token.h"
+#include "../../tokens/token.h"
 #include "../utils.h"
 #include <algorithm>
 #include <unordered_map>

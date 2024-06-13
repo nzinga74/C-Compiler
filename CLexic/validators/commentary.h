@@ -1,9 +1,9 @@
 #ifndef COMMENTARY_H
 #define COMMENTARY_H
 #include <iostream>
-#include "../tokens/type_token.h"
+#include "../../tokens/type_token.h"
 #include "../file_reader.h"
-#include "../tokens/token.h"
+#include "../../tokens/token.h"
 #include <algorithm>
 
 class Commentary

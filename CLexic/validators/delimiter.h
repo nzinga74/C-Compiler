@@ -1,9 +1,9 @@
 #ifndef DELIMITER_H
 #define DELIMINER_H
 #include <iostream>
-#include "../tokens/token.h"
+#include "../../tokens/token.h"
 #include "../file_reader.h"
-#include "../tokens/token.h"
+#include "../../tokens/token.h"
 #include <algorithm>
 #include <unordered_map>
 
@@ -40,7 +40,7 @@ public:
         }
         case ']':
         {
-            return new Token(TOKEN_OPEN_BRACKET, "]", reader->getLine());
+            return new Token(TOKEN_CLOSE_BRACKET, "]", reader->getLine());
         }
         case '{':
         {

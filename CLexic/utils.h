@@ -2,9 +2,9 @@
 #define UTILS_H
 #include <unordered_map>
 #include <iostream>
-#include "./tokens/type_token.h"
+#include "../tokens/type_token.h"
 #include "file_reader.h"
-#include "./tokens/token.h"
+#include "../tokens/token.h"
 #include <algorithm>
 #include <cctype>
 #include <regex>
@@ -43,6 +43,66 @@ public:
             return false;
 
         return true;
+    }
+    static string getToken(TypeToken token)
+    {
+        unordered_map<TypeToken, string> tokens = {
+            {TOKEN_ID, "id"},
+            {TOKEN_OPEN_PARENTHESE, "("},
+            {TOKEN_CLOSE_PARENTHESE, ")"},
+            {TOKEN_OPEN_BRACKET, "["},
+            {TOKEN_CLOSE_BRACKET, "]"},
+            {TOKEN_OPEN_BRACE, "{"},
+            {TOKEN_CLOSE_BRACE, "}"},
+            {TOKEN_SEMICOLON, ";"},
+            {TOKEN_SIMPLE_COMMENT, "//"},
+            {TOKEN_MULTLINE_COMMENT, "/* */"},
+            {TOKEN_ATRIB, "="},
+            {TOKEN_QUESTION, "?"},
+            {TOKEN_TWO_POINT, ":"},
+            {TOKEN_POINT, "."},
+            {TOKEN_COMMA, ","},
+            {TOKEN_ARROW, "->"},
+            {TOKEN_SCOPE, "::"},
+            {TOKEN_OPR_PLUS, "+"},
+            {TOKEN_OPR_PLUS_EGUAL, "+="},
+            {TOKEN_OPR_DOUBLE_PLUS, "++"},
+            {TOKEN_OPR_MULT, "*"},
+            {TOKEN_OPR_MUL_EGUAL, "*="},
+            {TOKEN_OPR_DOUBLE_MULT, "**"},
+            {TOKEN_OPR_DIV, "/"},
+            {TOKEN_OPR_DIV_EGUAL, "/="},
+            {TOKEN_OPR_DOUBLE_DIV, "//"},
+            {TOKEN_OPR_SUBS, "-"},
+            {TOKEN_OPR_DOUBLE_SUBS, "--"},
+            {TOKEN_OPR_SUBS_EGUAL, "-="},
+            {TOKEN_MOD, "%"},
+            {TOKEN_MOD_EGUAL, "%="},
+            {TOKEN_BIT_OR, "|"},
+            {TOKEN_BIT_AND, "&"},
+            {TOKEN_BIT_NOT, "~"},
+            {TOKEN_BIT_XOR, "^"},
+            {TOKEN_OR, "||"},
+            {TOKEN_AND, "&&"},
+            {TOKEN_NOT, "!"},
+            {TOKEN_DIFFERENT, "!="},
+            {TOKEN_RIGHT_SHIFT, ">>"},
+            {TOKEN_LEFT_SHIFT, "<<"},
+            {TOKEN_GREAT_THAN, ">"},
+            {TOKEN_GREAT_IGUAL_THAN, ">="},
+            {TOKEN_LESS_THAN, "<"},
+            {TOKEN_LESS_IGUAL_THAN, "<="},
+            {TOKEN_EGUAL, "=="},
+            {TOKEN_DIF, "!="},
+            {TOKEN_PRINTF, "printf"},
+            {TOKEN_MACRO_INCLUDE, "#include"}};
+        int count = tokens.count(token);
+        if (count > 0)
+        {
+            return tokens[token];
+        }
+        else
+            return "";
     }
     static void imprimirToken(TypeToken token)
     {

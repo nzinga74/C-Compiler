@@ -1,0 +1,6 @@
+void loop_example() {
+    int j = 0;
+    do {
+        j++;
+    } while (j < 5);
+}

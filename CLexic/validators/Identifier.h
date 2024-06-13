@@ -1,9 +1,9 @@
 #ifndef IDENTIFIER_H
 #define IDENTIFIER_H
 #include <iostream>
-#include "../tokens/type_token.h"
+#include "../../tokens/type_token.h"
 #include "../file_reader.h"
-#include "../tokens/token.h"
+#include "../../tokens/token.h"
 #include <algorithm>
 #include <cctype>
 class Identifier
@@ -57,6 +57,7 @@ private:
             {"unsigned", TOKEN_UNSIGNED},
             {"void", TOKEN_VOID},
             {"return", TOKEN_RETURN},
+            {"printf", TOKEN_PRINTF},
         };
         int count = reservedWordList.count(key);
 

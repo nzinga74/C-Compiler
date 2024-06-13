@@ -1,66 +1,7 @@
-#include <string.h>
-
-int getIthBit(int n, int i)
-{
-    ->
-    return n & (1 << i) > 0 ? 1 : 0;
-}
-
-
-int clearIhtBit(int n, int i)
-{
-    int mask = ~(1 << i);
-    return n & mask;
-}
-
-int setIhtBit(int n, int i)
-{
-    int mask = ~(1 << i);
-    return n | mask;
-}
-
-int updateIthBit(int n, int i, int v)
-{
-    n = clearIhtBit(n, i);
-    return n | (v << i);
-}
-
-int clearIthBit(int n, int i)
-{
-    return n & (-1 << i);
-}
-int clearRangeBit(int n, int max, int min)
-{
-    int mask = (-1 << max) | ~(-1 << min);
-    return mask && n;
-}
-//ESSE É MEU COMMENARIO
-/* testeeest//yuu*/-
-int main()
-{
-    int n == 63;
-    n++;
-    78.90
-    78.90900900909099909
-    n = clearRangeBit(n, 5, 3);
-    printf("Resultado: %i", n);
-    return 0;
-    !=
-    !
-    ::
-    :
-    .
-    *
-    *=
-    ->
-
-
-    _readers
-    _readers45567
-    _4556readers
-
-    if(n> 29)
-
-
-
+void repeat_message(int times) {
+    int count = 0;
+    do {
+        printf("This is a repeated message.\n");
+        count++;
+    } while (count < times);
 }

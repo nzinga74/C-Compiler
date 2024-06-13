@@ -1,9 +1,9 @@
 #ifndef DIRECTIVES_H
 #define DIRECTIVES_H
 #include <iostream>
-#include "../tokens/type_token.h"
+#include "../../tokens/type_token.h"
 #include "../file_reader.h"
-#include "../tokens/token.h"
+#include "../../tokens/token.h"
 #include <algorithm>
 #include <cctype>
 #include <unordered_map>

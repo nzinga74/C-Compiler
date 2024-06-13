@@ -76,10 +76,12 @@ public:
     {
         if (!file.is_open())
         {
-            cout << "Erro ao abrir o arquivo";
+            cout << "Erro ao abrir o arquivo\n";
+            exit(1);
         }
         else
         {
+
             initializeBuffer();
         }
     }

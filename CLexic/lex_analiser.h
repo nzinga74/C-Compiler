@@ -2,9 +2,9 @@
 #define LEX_ANALISER_H
 
 #include <iostream>
-#include "./tokens/type_token.h"
+#include "../tokens/type_token.h"
 #include "file_reader.h"
-#include "./tokens/token.h"
+#include "../tokens/token.h"
 #include <algorithm>
 #include "./validators/bit_relacional_operator.h"
 #include "./validators/special_operator.h"
@@ -100,9 +100,10 @@ private:
     }
 
 public:
-    LexAnaliser()
+    LexAnaliser(string filename)
     {
-        reader = new FileReader("code.txt");
+
+        reader = new FileReader(filename);
     }
     Token *nextToken()
     {

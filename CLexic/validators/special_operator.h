@@ -1,9 +1,9 @@
 #ifndef SPECIAL_OPERATOR_H
 #define SPECIAL_OPERATOR_H
 #include <iostream>
-#include "../tokens/type_token.h"
+#include "../../tokens/type_token.h"
 #include "../file_reader.h"
-#include "../tokens/token.h"
+#include "../../tokens/token.h"
 #include <algorithm>
 class SpecialOperator
 {
