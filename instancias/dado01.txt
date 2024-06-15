@@ -7,7 +7,7 @@ void f();
 int g(int x, float y);
 int h(double z) {
     int local_var;
-    return 10;
+    return 10
 }
 void f() {
     int i = 0;

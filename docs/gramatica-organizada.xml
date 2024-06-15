@@ -55,7 +55,7 @@
                         <stmt><content>         |
                         <vazio>
                     
-<do_stmt>       ::=     "do"<stmt>"while""("<exp>")"";"
+<do_stmt>       ::=     "do"<com_stmt>"while""("<exp>")"";"
 
 <while_stmt>    ::=     "while""("<exp>")"<stmt>
 
@@ -98,6 +98,7 @@
 <exp_3>     ::=         "||"<exp><exp_3> |
                         "="<exp><exp_3>  |
                         "=="<exp><exp_3> |
+                        "!="<exp><exp_3> |
                         "<="<exp><exp_3> |
                         "<"<exp><exp_3>  |
                         ">"<exp><exp_3>  |
@@ -119,7 +120,8 @@
                         "--"                |
                         <vazio>  
 
-<exp_2>         ::=     "="<exp>|
+<exp_2>         ::=     "="<exp>|<exp_1> |
+
                         <vazio>
  
 <arg_list_1>    ::=     ","<exp><arg_list_1>|
@@ -127,4 +129,4 @@
 
 <args>          ::=     <exp><arg_list_1>|
                         <vazio>
-<printf_stmt>   ::=     "printf""("STRING_LIT" <arg_list_1>)"
+<printf_stmt>   ::=     "printf""("STRING_LIT" <arg_list_1>)" ";"

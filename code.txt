@@ -1,7 +1,10 @@
 void repeat_message(int times) {
+    /*hello
+    helooo
+    hhhh*/
     int count = 0;
     do {
-        printf("This is a repeated message.\n");
+        printf("This is a repeated message.\n",i);
         count++;
     } while (count < times);
 }

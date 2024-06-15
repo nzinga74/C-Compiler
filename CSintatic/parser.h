@@ -36,7 +36,10 @@ private:
             }
             else
             {
-                this->bufferToken.push_back(nextToken);
+                if (!SintaticTools::isComment(nextToken->name))
+                {
+                    this->bufferToken.push_back(nextToken);
+                }
             }
         }
     }
@@ -275,7 +278,7 @@ private:
         {
             for_stmt();
         }
-        else if (lookAhead(1)->name == TOKEN_PRINTF)
+        else if (SintaticTools::isPrintStml(lookAhead(1)->name))
         {
             printf_stmt();
         }
@@ -387,6 +390,7 @@ private:
         match(TOKEN_VALUE_STRING);
         arg_list_1();
         match(TOKEN_CLOSE_PARENTHESE);
+        match(TOKEN_SEMICOLON);
     }
     void scanf_stmt() {}
     void do_stmt()
@@ -579,8 +583,8 @@ private:
     {
         if (lookAhead(1)->name == TOKEN_COMMA)
         {
-            exp();
             match(TOKEN_COMMA);
+            exp();
             arg_list_1();
         }
     }

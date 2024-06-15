@@ -12,6 +12,14 @@
 class SintaticTools
 {
 public:
+    static bool isComment(TypeToken token)
+    {
+        if (token == TOKEN_SIMPLE_COMMENT || token == TOKEN_MULTLINE_COMMENT)
+        {
+            return true;
+        }
+        return false;
+    }
     static bool isTypeDef(TypeToken token)
     {
 
