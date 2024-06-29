@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+// Function declaration
+void modifyArray(int *arr, int size);
+
+int main() {
+    int arr[5] = {1, 2, 3, 4, 5};
+    
+    printf("Array before modification:\n");
+    for (int i = 0; i < 5; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+    
+    modifyArray(arr, 5);
+    
+    printf("Array after modification:\n");
+    for (int i = 0; i < 5; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+    
+    return 0;
+}
+
+// Function definition
+void modifyArray(int *arr, int size) {
+    for (int i = 0; i < size; i++) {
+        arr[i] *= 2;
+    }
+}

@@ -63,7 +63,7 @@
                         <vazio>
 
 <local_decl_1>  ::=     ";"<local_decls>        |
-                        "[""]";"<local_decls>   |
+                        "["<exp>"]";"<local_decls>   |
                         "="<exp>";"<local_decls>|
                         ","ID<local_decl_2>
 
@@ -93,6 +93,7 @@
                         "!"<exp><exp_3> |
                         FLOAT_LIT<exp_3>|
                         CHAR_LIT<exp_3> |
+                        STRING_LIT<exp_3> |
                         INT_LIT<exp_3> 
 
 <exp_3>     ::=         "||"<exp><exp_3> |

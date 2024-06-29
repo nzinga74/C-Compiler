@@ -451,6 +451,7 @@ private:
         else if (lookAhead(1)->name == TOKEN_OPEN_BRACKET)
         {
             match(TOKEN_OPEN_BRACKET);
+            exp();
             match(TOKEN_CLOSE_BRACKET);
             match(TOKEN_SEMICOLON);
             local_decls();
@@ -525,9 +526,11 @@ private:
             match(TOKEN_VALUE_INT);
             exp3();
         }
-        // else if(lookAhead(1)->name == TOKEN_VALUE_CHAR)
-        // {
-        // }
+        else if (lookAhead(1)->name == TOKEN_VALUE_STRING)
+        {
+            match(TOKEN_VALUE_STRING);
+            exp3();
+        }
         else
         {
             sintaxeError("ID, +, -, !, number...");

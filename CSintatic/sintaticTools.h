@@ -147,7 +147,7 @@ public:
             {TOKEN_VALUE_INT, "INT_LIT"},
             {TOKEN_VALUE_FLOAT, "FLOAT_LIF"},
             {TOKEN_VALUE_DOUBLE, "DOUBLE_LIF"},
-            {TOKEN_VALUE_STRING, "DOUBLE_STRING"},
+            {TOKEN_VALUE_STRING, "STRING_LIT"},
         };
         int count = expStmt.count(token);
         if (count > 0)

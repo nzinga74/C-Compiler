@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <string.h>
+
+// Struct definition
+struct Person {
+    char name[50];
+    int age;
+};
+
+int main() {
+    // Struct variable and pointer declaration
+    struct Person person;
+    struct Person *ptr;
+    
+    // Assigning values to struct members
+    strcpy(person.name, "Alice");
+    person.age = 28;
+    
+    // Pointer to struct
+    ptr = &person;
+    
+    // Accessing struct members using pointer
+    printf("Name: %s\n", ptr->name);
+    printf("Age: %d\n", ptr->age);
+    
+    return 0;
+}
